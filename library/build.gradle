@@ -6,6 +6,7 @@ version = '3.10.0'
 
 android {
     compileSdkVersion 30
+    namespace("com.davemorrissey.labs.subscaleview")
 
     defaultConfig {
         minSdkVersion 14
@@ -31,7 +32,7 @@ task javadoc(type: Javadoc) {
     source = android.sourceSets.main.java.sourceFiles
     destinationDir = rootProject.file("docs/javadoc")
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-    classpath += configurations.compile
+    classpath += configurations.implementation
     classpath += configurations.javadocs
     options.noTimestamp = true
     options.links = ['https://developer.android.com/reference/']
